@@ -524,4 +524,10 @@ footer {
   .portfolio p {
     width: 80%;
   }
+
+  .form > form button {
+    width: 50%;
+    border-radius: 0;
+    padding: 10px;
+  }
 }
