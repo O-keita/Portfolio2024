@@ -471,8 +471,19 @@ footer {
 
   .datascience,
   .web {
-    width: 80%;
+    width: 90%;
     margin-top: 2rem;
+  }
+
+  .skills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .datascience > div,
+  .web > div {
+    width: 100%;
   }
 
   .projects {
