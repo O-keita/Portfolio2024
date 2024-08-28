@@ -388,11 +388,11 @@ footer {
     flex-direction: column;
     min-height: 100vh;
     flex-wrap: wrap;
-    width: 100%;
+    width: 90%;
   }
 
   .home .item1 {
-    width: 100%;
+    width: 98%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -413,9 +413,13 @@ footer {
   }
 
   .home .item2 {
-    width: 100%;
+    width: 90%;
     align-items: baseline;
     border-radius: 0;
+  }
+
+  .home .item2 img {
+    width: 80%;
   }
 
   .title {
@@ -451,7 +455,7 @@ footer {
 
   .skills {
     flex-direction: column;
-    width: 100%;
+    width: 90%;
   }
   .container {
     flex-direction: column;
@@ -504,5 +508,9 @@ footer {
 
   .social div {
     width: 40%;
+  }
+
+  .portfolio p {
+    width: 80%;
   }
 }
