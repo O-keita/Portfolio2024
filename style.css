@@ -415,6 +415,7 @@ footer {
   .home .item2 {
     width: 100%;
     align-items: baseline;
+    border-radius: 0;
   }
 
   .title {
