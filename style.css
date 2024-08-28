@@ -38,7 +38,7 @@ html {
 
 .home {
   padding: 2%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -116,10 +116,14 @@ html {
   font-weight: 600;
 }
 
+.sidebar ul li a i {
+  display: none;
+}
+
 /* about */
 
 .about {
-  height: 70vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +150,7 @@ html {
 /* skills */
 
 .skills {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,7 +161,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
   padding: 1%;
@@ -199,4 +202,295 @@ html {
   border-right: 2px solid #d99804;
   border-top: 2px solid #d99804;
   border-radius: 10px;
+}
+
+/* portfolio */
+
+.portfolio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.ml-projects,
+.web-dev-project {
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 90%;
+}
+
+.projects {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 4;
+}
+
+.ml-projects h2,
+.web-dev-project h2 {
+  border-radius: 10px;
+  border-bottom: 2px solid #d99804;
+  padding: 1%;
+}
+
+.portfolio p {
+  font-size: 1.2rem;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.portfolio p a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 1%;
+}
+
+.project img {
+  width: 100%;
+  height: 16rem;
+}
+
+.project-title {
+  position: relative;
+  top: -100px;
+  width: 95%;
+  padding: 1%;
+  background-color: rgba(2, 2, 58, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: rgb(201, 196, 196);
+}
+
+.project-title p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.project-title a {
+  padding: 2%;
+  background-color: #d99804;
+  border: none;
+  color: rgb(201, 196, 196);
+  width: 30%;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* contact */
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.contact > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.social {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social div {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1%;
+  background-color: rgba(2, 2, 39, 0.5); /* 50% transparency */
+  border-radius: 20px;
+}
+.social a {
+  margin: 1%;
+  padding: 15px 20px;
+}
+
+.social a i {
+  padding: 10px 20px;
+  font-size: 2rem;
+  color: rgb(201, 196, 196);
+  border-radius: 10px;
+}
+.form {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form > form {
+  width: 35%;
+  padding: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form > form > input,
+textarea {
+  background-color: rgb(201, 196, 196);
+  width: 100%;
+  padding: 2%;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: none;
+  margin: 1%;
+}
+footer {
+  text-align: center;
+  color: grey;
+}
+
+/* media Queries */
+
+@media (max-width: 800px) {
+  .home {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .home .item1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .item1 .intro {
+    width: 100%;
+  }
+
+  .item1 .intro h1 {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .quote {
+    display: none;
+  }
+
+  .item2 {
+    width: 10%;
+    align-items: baseline;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2rem;
+  }
+
+  .item1 .btn,
+  .item1 .btn-cv {
+    width: 40%;
+  }
+
+  .sidebar ul li a i {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  .sidebar ul li a p {
+    display: none;
+  }
+
+  .skills {
+    flex-direction: column;
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+  }
+
+  .bio {
+    width: 80%;
+  }
+
+  .skill-items {
+    width: 80%;
+  }
+
+  .datascience,
+  .web {
+    width: 80%;
+    margin-top: 2rem;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+
+  .project {
+    width: 80%;
+    margin-top: 2rem;
+  }
+
+  .project-title {
+    top: -105px;
+    width: 98%;
+  }
+
+  .contact {
+    align-items: center;
+  }
+
+  .contact .form {
+    width: 80%;
+  }
+
+  .form > form {
+    width: 70%;
+  }
+
+  .form > form input {
+    padding: 3%;
+  }
+
+  .social div {
+    width: 40%;
+  }
 }
