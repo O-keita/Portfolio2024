@@ -390,10 +390,12 @@ footer {
     flex-wrap: wrap;
     width: 90%;
     justify-content: center;
+    padding: 1%;
   }
 
   .home .item1 {
     width: 98%;
+    height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -415,6 +417,8 @@ footer {
 
   .home .item2 {
     width: 90%;
+    margin-top: 15px;
+    height: 40vh;
     align-items: baseline;
     border-radius: 0;
   }
@@ -428,7 +432,8 @@ footer {
 
   .home .item2 img {
     width: 100%;
-    height: 15rem;
+    height: 100%;
+    border-radius: 0;
   }
 
   .home .item1 .btn,
