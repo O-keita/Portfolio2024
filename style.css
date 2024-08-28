@@ -389,6 +389,7 @@ footer {
     min-height: 100vh;
     flex-wrap: wrap;
     width: 90%;
+    justify-content: center;
   }
 
   .home .item1 {
