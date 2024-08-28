@@ -103,7 +103,7 @@ html {
   border-radius: 50px;
 }
 .transparent {
-  background-color: rgba(2, 2, 39, 0.5); /* 50% transparency */
+  background-color: rgba(2, 2, 39, 0.9); /* 50% transparency */
   width: 40%;
   padding: 1.5%;
   z-index: 1000;
@@ -438,6 +438,16 @@ footer {
     display: none;
   }
 
+  .sidebar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    width: 70%;
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+
   .skills {
     flex-direction: column;
     width: 100%;
@@ -470,6 +480,7 @@ footer {
   }
 
   .project-title {
+    z-index: 1;
     top: -105px;
     width: 98%;
   }
