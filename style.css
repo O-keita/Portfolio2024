@@ -383,7 +383,7 @@ footer {
 
 @media (max-width: 800px) {
   .home {
-    margin-top: 4rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -428,6 +428,10 @@ footer {
     font-size: 1.5rem;
     font-weight: 500;
     margin-top: 2rem;
+  }
+
+  .home .item1 .title {
+    margin: 2%;
   }
 
   .home .item2 img {
