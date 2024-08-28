@@ -397,7 +397,7 @@ footer {
     width: 98%;
     height: 40vh;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     flex-direction: column;
   }
