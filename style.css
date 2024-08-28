@@ -69,7 +69,7 @@ html {
   background-image: radial-gradient(#d99804 1px, transparent 3px);
   background-size: 50px 50px;
   width: 50%;
-  height: 90vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,10 +418,6 @@ footer {
     border-radius: 0;
   }
 
-  .home .item2 img {
-    width: 80%;
-  }
-
   .title {
     width: 100%;
     font-size: 1.5rem;
@@ -429,9 +425,14 @@ footer {
     margin-top: 2rem;
   }
 
-  .item1 .btn,
-  .item1 .btn-cv {
-    width: 40%;
+  .home .item2 img {
+    width: 100%;
+    height: 15rem;
+  }
+
+  .home .item1 .btn,
+  .home .item1 .btn-cv {
+    width: 46%;
   }
 
   .sidebar ul li a i {
