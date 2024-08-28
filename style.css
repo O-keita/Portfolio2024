@@ -1,10 +1,15 @@
 body {
   background-color: #100631;
   padding: 0;
-  color: white;
+  color: rgb(201, 196, 196);
   margin: 0;
   text-decoration: none;
   list-style: none;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .btn,
@@ -71,6 +76,12 @@ body {
   border-radius: 100%;
 }
 
+.quote {
+  color: #d99804;
+  font-size: 1.5rem;
+  font-style: italic;
+  width: 80%;
+}
 .sidebar {
   display: flex;
   align-items: center;
@@ -93,10 +104,99 @@ body {
 }
 .transparent {
   background-color: rgba(2, 2, 39, 0.5); /* 50% transparency */
+  width: 40%;
+  padding: 1.5%;
+  z-index: 1000;
+  border-radius: 50px;
 }
 .sidebar ul li a {
-  color: white;
+  color: rgb(201, 196, 196);
   font-size: 1rem;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* about */
+
+.about {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading {
+  color: #d99804;
+}
+
+.bio {
+  width: 70%;
+  border: 1px solid #d99804;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+.bio p {
+  line-height: 30px;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+/* skills */
+
+.skills {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1%;
+}
+
+.datascience,
+.web {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.4px solid rgb(201, 196, 196);
+  margin: 1%;
+  border-radius: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.skill-items {
+  width: 60%;
+}
+
+.skill-items ul li {
+  font-size: 1.2rem;
+  line-height: 30px;
+  text-align: justify;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.skill-items ul li img {
+  width: 20px;
+  margin: 2%;
+}
+
+.container h2 {
+  padding: 2%;
+  border-right: 2px solid #d99804;
+  border-top: 2px solid #d99804;
+  border-radius: 10px;
 }
