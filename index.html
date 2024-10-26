@@ -233,16 +233,16 @@
 
             // Project slider functionality
             function updateSlider() {
-                projects.style.transform = `translateX(-${currentProject * 102}%)`;
+                projects.style.transform = `translateX(-${currentProject * 80}%)`;
             }
 
             prevButton.addEventListener('click', () => {
-                currentProject = (currentProject - 1 + 5) % 5;
+                currentProject = (currentProject - 1 + 4) % 4;
                 updateSlider();
             });
 
             nextButton.addEventListener('click', () => {
-                currentProject = (currentProject + 1) % 5;
+                currentProject = (currentProject + 1) % 4;
                 updateSlider();
             });
         });
