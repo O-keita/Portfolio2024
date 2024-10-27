@@ -38,40 +38,43 @@
     <section id="projects" class="section">
         <div class="container">
             <h2>Projects</h2>
-            <div class="projects-slider">
-                <div class="projects">
-
-
-                    <div class="project">
-                        <img src="images/realestate.png" alt="Predictive Maintenance System" class="project-image">
+            <div class="project-slider">
+                <div class="project-slide">
+                    <img src="images/realestate.png" alt="Predictive Maintenance System" class="project-image">
+                    <div class="project-content">
                         <h3>Predictive Maintenance System</h3>
                         <p>Implemented a deep learning model to predict equipment failures, reducing downtime by 25% and maintenance costs by 20%.</p>
+                        <a href="#" class="demo-button">View Demo</a>
                     </div>
-
-
-                    <div class="project">
-                      <img src="images/milling.png" alt="Predictive Maintenance System" class="project-image">
-                      <h3>Predictive Maintenance System</h3>
-                      <p>A project aimed at forecasting equipment or system maintenance needs using predictive modeling techniques, helping to prevent downtime and improve operational efficiency. </p>
-                  </div>
-
-                  <div class="project">
-                    <img src="images/eco.jpg" alt="Predictive Maintenance System" class="project-image">
-                    <h3>Sierra EcoHeat</h3>
-                    <p> A project focused on sustainable heating solutions, potentially utilizing eco-friendly technology to enhance energy efficiency and reduce environmental impact.</p>
                 </div>
-
-
-                <div class="project">
-                  <img src="images/SmartWaste.png" alt="Predictive Maintenance System" class="project-image">
-                  <h3>Smart Waste Management Project</h3>
-                  <p> A project aimed at optimizing waste management using intelligent solutions, likely involving data-driven methods to improve efficiency in waste collection and disposal.</p>
-              </div>
+                <div class="project-slide">
+                    <img src="images/milling.png" alt="Predictive Maintenance System" class="project-image">
+                    <div class="project-content">
+                        <h3>Predictive Maintenance System</h3>
+                        <p>A project aimed at forecasting equipment or system maintenance needs using predictive modeling techniques, helping to prevent downtime and improve operational efficiency.</p>
+                        <a href="#" class="demo-button">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-slide">
+                    <img src="images/eco.jpg" alt="Sierra EcoHeat" class="project-image">
+                    <div class="project-content">
+                        <h3>Sierra EcoHeat</h3>
+                        <p>A project focused on sustainable heating solutions, potentially utilizing eco-friendly technology to enhance energy efficiency and reduce environmental impact.</p>
+                        <a href="#" class="demo-button">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-slide">
+                    <img src="images/SmartWaste.png" alt="Smart Waste Management Project" class="project-image">
+                    <div class="project-content">
+                        <h3>Smart Waste Management Project</h3>
+                        <p>A project aimed at optimizing waste management using intelligent solutions, likely involving data-driven methods to improve efficiency in waste collection and disposal.</p>
+                        <a href="#" class="demo-button">View Demo</a>
+                    </div>
                 </div>
             </div>
             <div class="slider-controls">
-                <button class="slider-control" id="prevProject">&#8592;</button>
-                <button class="slider-control" id="nextProject">&#8594;</button>
+                <button class="slider-control" id="prevProject" aria-label="Previous project">&#8592;</button>
+                <button class="slider-control" id="nextProject" aria-label="Next project">&#8594;</button>
             </div>
         </div>
     </section>
@@ -195,7 +198,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const header = document.querySelector('header');
             const sections = document.querySelectorAll('.section');
-            const projects = document.querySelector('.projects');
+            const projectSlides = document.querySelectorAll('.project-slide');
             const prevButton = document.getElementById('prevProject');
             const nextButton = document.getElementById('nextProject');
             let currentProject = 0;
@@ -231,21 +234,66 @@
                 });
             });
 
-            // Project slider functionality
-            function updateSlider() {
-                projects.style.transform = `translateX(-${currentProject * 90}%)`;
+            function showProject(index) {
+        projectSlides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+                slide.style.opacity = 1;
+            } else {
+                slide.classList.remove('active');
+                slide.style.opacity = 0;
             }
-
-            prevButton.addEventListener('click', () => {
-                currentProject = (currentProject - 1 + 4) % 4;
-                updateSlider();
-            });
-
-            nextButton.addEventListener('click', () => {
-                currentProject = (currentProject + 1) % 4;
-                updateSlider();
-            });
         });
+    }
+
+    function nextProject() {
+        currentProject = (currentProject + 1) % projectSlides.length;
+        showProject(currentProject);
+    }
+
+    function prevProject() {
+        currentProject = (currentProject - 1 + projectSlides.length) % projectSlides.length;
+        showProject(currentProject);
+    }
+
+    prevButton.addEventListener('click', prevProject);
+    nextButton.addEventListener('click', nextProject);
+
+    // Show the first project initially
+    showProject(currentProject);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevProject();
+        if (e.key === 'ArrowRight') nextProject();
+    });
+
+    // Touch swipe functionality
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        if (touchStartX - touchEndX > 50) {
+            nextProject();
+        }
+        if (touchEndX - touchStartX > 50) {
+            prevProject();
+        }
+    }
+
+    // Optional: Auto-advance the slider every 5 seconds
+    setInterval(nextProject, 10000);
+
+            });
     </script>
 </body>
 </html>
